@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FABDFDB9-23F8-4FFD-A9E4-0BF59ACA93B4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>OpenSFVis</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Externals\include\;..\Externals\include\openni</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenNI.lib;opencv_core231d.lib;opencv_highgui231d.lib;opencv_imgproc231d.lib;opencv_calib3d231d.lib;opencv_video231d.lib;flann.lib;GLFW.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Externals\lib;..\Externals\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "..\Externals\bin\OpenNI.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_calib3d231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_core231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_features2d231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_flann231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_highgui231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_imgproc231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_video231d.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\tbb_debug.dll" "$(OutDir)" /y /d</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Externals\include\;..\Externals\include\openni</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenNI.lib;opencv_core231.lib;opencv_highgui231.lib;opencv_imgproc231.lib;opencv_calib3d231.lib;opencv_video231.lib;flann.lib;GLFW.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Externals\lib;..\Externals\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "..\Externals\bin\OpenNI.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_calib3d231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_core231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_features2d231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_flann231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_highgui231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_imgproc231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\opencv_video231.dll" "$(OutDir)" /y /d
+xcopy "..\Externals\bin\$(Configuration)\tbb.dll" "$(OutDir)" /y /d</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMinPack\cminpack.vcxproj">
+      <Project>{dfca12ec-b869-49b9-920d-f14ffb48529f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenSFFeatures\OpenSFFeatures.vcxproj">
+      <Project>{80e7626e-877b-44b1-bfee-4c4a688d06e0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenSFInput\OpenSFInput.vcxproj">
+      <Project>{a3e77dbc-dc32-4ca3-9531-fb8fd9d1682d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenSFitting\OpenSFitting.vcxproj">
+      <Project>{a0006ab5-9741-4674-a017-e309ad463f8e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenSFLib\OpenSFLib.vcxproj">
+      <Project>{324e64ea-f3bc-423c-b064-e64c6da86f0e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenSFSegmentation\OpenSFSegmentation.vcxproj">
+      <Project>{185a0d1c-b3e4-4a7a-b8df-d95b42b7f6de}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenSF\OpenSF.vcxproj">
+      <Project>{1a15049b-1325-4744-b79f-e909e34b0152}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Visualization2d.cpp" />
+    <ClCompile Include="Visualization3d.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Visualization2d.h" />
+    <ClInclude Include="Visualization3d.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
