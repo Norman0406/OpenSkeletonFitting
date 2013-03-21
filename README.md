@@ -24,7 +24,7 @@ delivers the input data from a connected sensor. It can create input data from M
 
 ## OpenSFSegmentation
 
-retrieves the input frames from the sensor and segment it, such that the background is removed and the user can be detected. This currently only supports a simple background subtraction, in which the first captured frame is considered to show the static background and all the following frames are subtracted against this background. Only one single user can be detected.
+retrieves the input frames from the sensor and segments it, such that the background is removed and the user can be detected. This currently only supports a simple background subtraction, in which the first captured frame is considered to show the static background and all the following frames are subtracted against this background. Only one single user can be detected.
 
 ## OpenSFFeatures
 
@@ -34,7 +34,7 @@ This module also incorporates a simple feature tracking algorithm to create a tr
 
 ## OpenSFitting
 
-defines a skeleton hierarchy consisting fo joints, bones and constraints. An energy function is then attached to each joint which uses the previously detected features, geodesic lines and the point cloud to define an energy, based on the joint parameters. The energy functions for the whole skeleton hierarchy are supposed to be minimal when the pose is optimal. A simple gradient minimization algorithm then uses the previous pose to minimize the overall skeleton energy.
+defines a skeleton hierarchy consisting of joints, bones and constraints. An energy function is then attached to each joint which uses the previously detected features, geodesic lines and the point cloud to define an energy, based on the joint parameters. The energy functions for the whole skeleton hierarchy are supposed to be minimal when the pose is optimal. A simple gradient minimization algorithm then uses the previous pose to change the skeleton parameters and minimize the overall skeleton energy.
 
 A joint also defines classificator functions, which label the features to corresponding body parts, as well as extrapolator functions, which define the behaviour in case the body part has not been found.
 
@@ -44,15 +44,15 @@ is the main library to which other libraries can link against.
 
 ## OpenSFApp
 
-is a simple application which does not provide any visual output but runs the algorithms.
+is a simple application which does not provide any visual output but only runs the algorithms.
 
 ## OpenSFVis
 
-visualizes the tracking result in either 2d or 3d representation using OpenGL.
+visualizes the tracking results in either a 2d or 3d visualization.
 
 # Build instructions
 
-The library has been successfully tested to build on Microsoft Windows and MacOS X. For sake of simplicity, all required externals except boost are included in "Externals\".
+The library has been successfully tested on Microsoft Windows 7, 8 and on MacOS X. For sake of simplicity, all required externals except boost are included in "Externals\".
 
 ## On Windows:
 
