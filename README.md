@@ -1,6 +1,6 @@
 # OpenSkeletonFitting
 
-Skeleton fitting algorithm by the use of energy minimization
+Skeleton fitting algorithm using energy minimization on geodesic distance features.
 
 # Description
 
@@ -16,7 +16,7 @@ OpenSkeletonFitting (OpenSF) consists of the following modules:
 
 ## OpenSF
 
-is the main framework. It consists of all necessary modules and utilities, which are needed by the modules
+is the main framework. It consists of all necessary utilities that are needed by the modules. This comprises module interface definitions, exception handling, logging and mathematical functions.
 
 ## OpenSFInput
 
