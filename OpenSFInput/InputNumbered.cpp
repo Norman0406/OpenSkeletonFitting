@@ -75,15 +75,15 @@ namespace osf
 		bool successful = true;
 		
 		// read depth image
-		sprintf(buffer, m_format.c_str(), m_frameIndex, "depth");
+		sprintf_s(buffer, m_format.c_str(), m_frameIndex, "depth");
 		successful &= loadCvMat(buffer, m_imgDepth);
 		
 		// read depth image
-		sprintf(buffer, m_format.c_str(), m_frameIndex, "color");
+		sprintf_s(buffer, m_format.c_str(), m_frameIndex, "color");
 		successful &= loadCvMat(buffer, m_imgColor);
 		
 		// read depth image
-		sprintf(buffer, m_format.c_str(), m_frameIndex, "3d");
+		sprintf_s(buffer, m_format.c_str(), m_frameIndex, "3d");
 		successful &= loadCvMat(buffer, m_img3d);
 
 		if (!successful)
@@ -115,15 +115,15 @@ namespace osf
 			bool successful = true;
 		
 			// read depth image
-			sprintf(buffer, m_format.c_str(), m_frameIndex, "depth");
+			sprintf_s(buffer, m_format.c_str(), m_frameIndex, "depth");
 			successful &= loadCvMat(buffer, m_imgDepth, &timestamp);
 		
 			// read depth image
-			sprintf(buffer, m_format.c_str(), m_frameIndex, "color");
+			sprintf_s(buffer, m_format.c_str(), m_frameIndex, "color");
 			successful &= loadCvMat(buffer, m_imgColor);
 		
 			// read depth image
-			sprintf(buffer, m_format.c_str(), m_frameIndex, "3d");
+			sprintf_s(buffer, m_format.c_str(), m_frameIndex, "3d");
 			successful &= loadCvMat(buffer, m_img3d);
 
 			// loop or terminate

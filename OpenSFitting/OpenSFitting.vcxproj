@@ -85,7 +85,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm115 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>..\Externals\include\;..\Externals\include\openni</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST_DIR);..\Externals\include\;..\Externals\include\openni</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm115 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>..\Externals\include\;..\Externals\include\openni</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST_DIR);..\Externals\include\;..\Externals\include\openni</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

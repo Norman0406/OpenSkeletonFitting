@@ -340,15 +340,15 @@ namespace osf
 			char buffer[512];
 						
 			// save depth image
-			sprintf(buffer, m_capFormat.c_str(), m_frame, "depth");
+			sprintf_s(buffer, m_capFormat.c_str(), m_frame, "depth");
 			saveCvMat(buffer, m_imgDepth);
 			
 			// save color image
-			sprintf(buffer, m_capFormat.c_str(), m_frame, "color");
+			sprintf_s(buffer, m_capFormat.c_str(), m_frame, "color");
 			saveCvMat(buffer, m_imgColor);
 			
 			// save 3d image
-			sprintf(buffer, m_capFormat.c_str(), m_frame, "3d");
+			sprintf_s(buffer, m_capFormat.c_str(), m_frame, "3d");
 			saveCvMat(buffer, m_img3d);
 
 			m_frame++;
