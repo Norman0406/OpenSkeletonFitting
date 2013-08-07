@@ -4,7 +4,7 @@ Skeleton fitting algorithm using energy minimization on geodesic distance featur
 
 # Description
 
-This is OpenSkeletonFitting (OpenSF). Is has been initiated as a research project at Osaka University, Japan from October 2011 to March 2012. It provides algorithms to enable skeleton tracking, using a single depth camera like Microsoft Kinect or Asus Xtion.
+OpenSkeletonFitting (OpenSF) has been initiated as a research project at Osaka University, Japan from October 2011 to March 2012. It provides algorithms to enable skeleton tracking, using a single depth camera like Microsoft Kinect or Asus Xtion.
 
 If you have ideas, constructive criticism or want to contribute to the project, please feel free to contact the author at anytime. Using this project or parts of it in derived works is highly encouraged. Please respect the licensing and mention the author "Norman Link <norman.link@gmx.net>".
 
